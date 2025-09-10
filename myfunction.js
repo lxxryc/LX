@@ -18,10 +18,10 @@
   }
   window.addEventListener('orientationchange', ()=>setTimeout(setNavH, 100));
 
-  const DURATION_SECONDS = 15; 
-  const SECRET_MESSAGE = "sam mingaw ko imo, luwis ni";
+  const DURATION_SECONDS = 90; 
+  const SECRET_MESSAGE = "In case you're starting to forget, know that you're loved in ways you might not always notice. It's not just in the words people say out loud, but in those secret glances, saved seats, and messages that check if you get home safely. You're the reason moments are lighter when you're in the room. Don't forget that sometimes, love reveals itself in the smallest, most precious details.";
   const SELF_DESTRUCT_TEXT = "message destroyed! imissyou";
-  const AFTER_TEXT = "";
+  const AFTER_TEXT = "— 627";
 
   const countdownTextEl = document.getElementById("countdownText");
   const countdownEl = document.getElementById("countdown");
