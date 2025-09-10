@@ -243,7 +243,6 @@
     });
   }
 
-  // ✅ Modified validation logic
   async function handleFormSubmit(form, resultEl){
     resultEl.style.color = "#6b7280";
     resultEl.textContent = "Sending…";
@@ -252,13 +251,18 @@
       const recipient = form.querySelector("#recipientAnon");
       const message = form.querySelector("#messageAnon");
 
+      recipient.classList.remove("error");
+      message.classList.remove("error");
+
       if (!recipient.value.trim()) {
+        recipient.classList.add("error");
         recipient.focus();
         resultEl.style.color = "red";
         resultEl.textContent = "Recipient link is required.";
         return;
       }
       if (!message.value.trim()) {
+        message.classList.add("error");
         message.focus();
         resultEl.style.color = "red";
         resultEl.textContent = "Message is required.";
@@ -267,7 +271,9 @@
     } else {
       const required = form.querySelectorAll("[required]");
       for (const r of required){
+        r.classList.remove("error");
         if (!r.value.trim()){
+          r.classList.add("error");
           r.focus();
           resultEl.style.color = "red";
           resultEl.textContent = "Please fill out the required field(s).";
