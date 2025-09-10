@@ -10,7 +10,6 @@
 </head>
 <body>
   
-  
   <nav id="navbar" role="navigation" aria-label="Top">
     <div class="nav-left">
       <div class="logo" tabindex="0" aria-label="Le4veMessage">Le4veMessage</div>
@@ -22,7 +21,6 @@
     <button class="menu-btn" id="menuBtn" aria-label="Open Menu" aria-controls="sideMenu" aria-expanded="false">☰</button>
   </nav>
 
-  
   <aside class="side-menu" id="sideMenu" aria-hidden="true">
     <a href="#" data-page="home" class="active">Home</a>
     <a href="#" data-modal="aboutModal">About</a>
@@ -31,13 +29,9 @@
     <a href="#" data-page="toLouis">To: Louis</a>
     <a href="#" data-page="anonymous">Send Anonymous Message</a>
     <div class="menu-divider"></div>
+  </aside>
 
-</aside>
-
- 
-  
   <main>
-
     <section id="home" class="active" aria-labelledby="home-title">
       <h1 id="home-title" class="sr-only">Home</h1>
       <p id="countdownText">This message will self-destruct in <span id="countdown"></span></p>
@@ -45,25 +39,9 @@
       <p id="status" aria-live="assertive"></p>
     </section>
 
-
     <section id="toLouis" aria-labelledby="toLouis-title">
       <h2 id="toLouis-title" class="sr-only">Send a message to Louis</h2>
-
-      <form id="msgFormLouis" action="https://formspree.io/f/xkgvkylg" method="POST" novalidate>
-
-        <h2>Send a message to Louis</h2>
-
-        <label for="identityLouis">Name / FB / IG</label>
-        <input id="identityLouis" name="identity" type="text" placeholder="(optional)"/>
-
-        <label for="messageLouis">Message</label>
-        <textarea id="messageLouis" name="message" required placeholder="Type your message here..."></textarea>
-
-        <button type="submit">Send</button>
-        <div class="form-result" id="formResultLouis"></div>
-      </form>
-
-
+            
       <template id="faqLouisTpl">
         <h2 style="margin-bottom:10px">FAQ — To: Louis</h2>
         <div class="faq-list">
@@ -87,46 +65,21 @@
           </div>
         </div>
       </template>
-    </section>
 
+      <form id="msgFormLouis" action="https://formspree.io/f/xkgvkylg" method="POST" novalidate>
+        <h2>Send a message to Louis</h2>
+        <label for="identityLouis">Name / FB / IG</label>
+        <input id="identityLouis" name="identity" type="text" placeholder="(optional)"/>
+        <label for="messageLouis">Message</label>
+        <textarea id="messageLouis" name="message" required placeholder="Type your message here..."></textarea>
+        <button type="submit">Send</button>
+        <div class="form-result" id="formResultLouis"></div>
+      </form>
+    </section>
 
     <section id="anonymous" aria-labelledby="anonymous-title">
       <h2 id="anonymous-title" class="sr-only">Send Anonymous Message</h2>
-
-      <form id="msgFormAnon" action="https://formspree.io/f/xkgvkylg" method="POST" novalidate>
-
-        <h2>Send Anonymous Message</h2>
-
-        <label for="recipientAnon">Recipient Link</label>
-        <input id="recipientAnon" name="recipient" type="url" placeholder="https://">
-
-        <label for="messageAnon">Message</label>
-        <textarea id="messageAnon" name="message" required placeholder="Type your message here..."></textarea>
-
-        <div class="row">
-          <div>
-            <label for="clueAnon">Your identity</label>
-            <input id="clueAnon" name="clue" type="text" placeholder="Small hint if you want"/>
-          </div>
-          <div>
-            <label for="expireAnon">Duration (optional)</label>
-            <input id="expireAnon" name="expiry" type="number" min="1" step="1" placeholder="e.g., 30"/>
-          </div>
-        </div>
-
-        <button type="submit">Send Anonymously</button>
-        <div class="form-result" id="formResultAnon"></div>
-
-
-        <div class="callout warn" role="note" aria-label="Privacy Reminder" style="margin-top:12px">
-          <div>
-            <div class="title">Privacy reminder</div>
-            <div class="muted">Anonymous messages may still be moderated. Don’t include sensitive data you wouldn’t want stored.</div>
-          </div>
-        </div>
-      </form>
-
-
+        
       <template id="faqAnonTpl">
         <h2 style="margin-bottom:10px">FAQ — Anonymous</h2>
         <div class="faq-list">
@@ -140,7 +93,7 @@
             <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
               <span>Can anyone see the message I send?</span><span class="chev">▾</span>
             </div>
-            <div class="faq-answer">Only the developer, and recepient can read your message.</div>
+            <div class="faq-answer">Only the developer, and recipient can read your message.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
@@ -170,24 +123,39 @@
             <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
               <span>How long does it take to deliver?</span><span class="chev">▾</span>
             </div>
-            <div class="faq-answer">Usually under 3 minute to process, depending on netwoek strength.</div>
+            <div class="faq-answer">Usually under 3 minute to process, depending on network strength.</div>
           </div>
         </div>
       </template>
+
+      <form id="msgFormAnon" action="https://formspree.io/f/xkgvkylg" method="POST" novalidate>
+        <h2>Send Anonymous Message</h2>
+        <label for="recipientAnon">Recipient Link</label>
+        <input id="recipientAnon" name="recipient" type="url" placeholder="https://">
+        <label for="messageAnon">Message</label>
+        <textarea id="messageAnon" name="message" required placeholder="Type your message here..."></textarea>
+        <div class="row">
+          <div>
+            <label for="clueAnon">Your identity</label>
+            <input id="clueAnon" name="clue" type="text" placeholder="Small hint if you want"/>
+          </div>
+          <div>
+            <label for="expireAnon">Duration (optional)</label>
+            <input id="expireAnon" name="expiry" type="number" min="1" step="1" placeholder="e.g., 30"/>
+          </div>
+        </div>
+        <button type="submit">Send Anonymously</button>
+        <div class="form-result" id="formResultAnon"></div>
+      </form>
     </section>
   </main>
 
-  
-  
   <div id="faqModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="faqModalTitle">
     <div class="modal-content" role="document" tabindex="-1">
       <span class="close" data-close="faqModal" aria-label="Close">&times;</span>
-      <div id="faqModalBody">
-
-    </div>
+      <div id="faqModalBody"></div>
     </div>
   </div>
-
 
   <div id="aboutModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="aboutTitle">
     <div class="modal-content" role="document" tabindex="-1">
@@ -200,7 +168,6 @@
     </div>
   </div>
 
-
   <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contactTitle">
     <div class="modal-content" role="document" tabindex="-1">
       <span class="close" data-close="contactModal">&times;</span>
@@ -211,17 +178,11 @@
     </div>
   </div>
 
- 
-  
   <footer>
     <p>from <strong>Louís Ryc</strong></p>
     <div class="ryc">LX</div>
   </footer>
 
-  
-<script src="myfunction.js"></script>
-
-
-
+  <script src="myfunction.js"></script>
 </body>
 </html>
