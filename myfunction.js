@@ -243,17 +243,36 @@
     });
   }
 
+  // ✅ Modified validation logic
   async function handleFormSubmit(form, resultEl){
     resultEl.style.color = "#6b7280";
     resultEl.textContent = "Sending…";
 
-    const required = form.querySelectorAll("[required]");
-    for (const r of required){
-      if (!r.value.trim()){
-        r.focus();
+    if (form.id === "msgFormAnon") {
+      const recipient = form.querySelector("#recipientAnon");
+      const message = form.querySelector("#messageAnon");
+
+      if (!recipient.value.trim()) {
+        recipient.focus();
         resultEl.style.color = "red";
-        resultEl.textContent = "Please fill out the required field(s).";
+        resultEl.textContent = "Recipient link is required.";
         return;
+      }
+      if (!message.value.trim()) {
+        message.focus();
+        resultEl.style.color = "red";
+        resultEl.textContent = "Message is required.";
+        return;
+      }
+    } else {
+      const required = form.querySelectorAll("[required]");
+      for (const r of required){
+        if (!r.value.trim()){
+          r.focus();
+          resultEl.style.color = "red";
+          resultEl.textContent = "Please fill out the required field(s).";
+          return;
+        }
       }
     }
 
@@ -262,12 +281,7 @@
       const data = new FormData(form);
       const obj = {};
       data.forEach((v,k)=>{ obj[k]=v; });
-      resultEl.innerHTML = `
-        ⚠️ <strong>Can't send yet. Fixing soon.</strong> 
-
-
-        
-      `;
+      resultEl.innerHTML = `⚠️ <strong>Can't send yet. Fixing soon.</strong>`;
       return;
     }
 
