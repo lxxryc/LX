@@ -18,8 +18,8 @@
   }
   window.addEventListener('orientationchange', ()=>setTimeout(setNavH, 100));
 
-  const DURATION_SECONDS = 120; 
-  const SECRET_MESSAGE = "Keep going, you’re doing great.";
+  const DURATION_SECONDS = 123; 
+  const SECRET_MESSAGE = "Keep going, you’re doing great..";
   const SELF_DESTRUCT_TEXT = "Message destroyed!";
   const AFTER_TEXT = "";
 
