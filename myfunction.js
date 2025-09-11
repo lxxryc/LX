@@ -28,6 +28,13 @@
   }
   window.addEventListener("resize", adjustFooterPadding);
   window.addEventListener("load", adjustFooterPadding);
+  if (window.ResizeObserver) {
+    const footer = document.querySelector("footer");
+    if (footer) {
+      new ResizeObserver(adjustFooterPadding).observe(footer);
+    }
+  }
+  adjustFooterPadding();
 
   const DURATION_SECONDS = 90; 
   const SECRET_MESSAGE = "In case you're starting to forget, know that you're loved in ways you might not always notice. It's not just in the words people say out loud, but in those secret glances, saved seats, and messages that check if you get home safely. You're the reason moments are lighter when you're in the room. Don't forget that sometimes, love reveals itself in the smallest, most precious details.";
