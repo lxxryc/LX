@@ -14,6 +14,7 @@
   --focus:0 0 0 3px rgba(37,99,235,.25);
   --gray:#e5e7eb;
   --gray-2:#d1d5db;
+  --footer-h:52px; 
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -33,6 +34,7 @@ main{
   display:flex;
   flex-direction:column;
   align-items:center;
+  padding-bottom:var(--footer-h);  
 }
 
 img{max-width:100%;display:block}
@@ -233,7 +235,6 @@ button[disabled]{opacity:.65;cursor:not-allowed}
 }
 .faq-item.open .faq-answer{
   opacity:1; transform:none;
-
 }
 
 
@@ -243,12 +244,13 @@ footer{
   bottom:0;
   left:0;
   width:100%;
-  padding:14px 0;
-  text-align:center;
+  height:var(--footer-h);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:.8em;
   color:var(--muted);
   background:var(--bg);
-  border-top:1px solid var(--divider);
   z-index:1000;
 }
 .ryc {
