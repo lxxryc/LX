@@ -14,7 +14,7 @@
   --focus:0 0 0 3px rgba(37,99,235,.25);
   --gray:#e5e7eb;
   --gray-2:#d1d5db;
-  --footer-h:52px; 
+  --footer-h:52px; /* ✅ footer height */
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -34,12 +34,11 @@ main{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-bottom:var(--footer-h);  
+  padding-bottom:var(--footer-h); /* ✅ prevent footer overlap */
 }
 
 img{max-width:100%;display:block}
 button,input,textarea,select{font:inherit;color:inherit}
-
 
 nav{
   position:sticky;top:0;z-index:1000;
@@ -108,7 +107,6 @@ section.active{display:block}
 .callout.warn{border-left-color:var(--danger)}
 .callout .title{font-weight:800}
 
-
 #countdownText{
   font-size:clamp(14px,2vw,18px);
   font-weight:700;
@@ -142,7 +140,6 @@ section.active{display:block}
 #status{font-size:clamp(16px,2vw,20px);font-weight:700;margin:10px 0 6px;text-align:center}
 .after-text{display:block;margin-top:6px;font-size:clamp(14px,1.8vw,16px);color:var(--muted)}
 
-
 .side-menu{
   position:fixed;right:-290px;top:0;height:100%;width:280px;
   background:var(--card);
@@ -161,7 +158,6 @@ section.active{display:block}
 .side-menu a.active{background:#eaf2ff;color:var(--accent);border:1px solid #bfdbfe}
 .side-menu a:focus-visible{border-color:#bfdbfe;box-shadow:0 0 0 3px rgba(37,99,235,.2)}
 .menu-divider{border-top:1px solid var(--divider);margin:10px 0}
-
 
 form{padding:16px;display:flex;flex-direction:column;gap:10px}
 form h2{margin-bottom:4px}
@@ -187,12 +183,8 @@ button[disabled]{opacity:.65;cursor:not-allowed}
 .form-result{font-size:.95em;margin-top:2px}
 .muted{color:var(--muted);font-size:.9em}
 
-
 #messageLouis{height:150px} 
 #messageAnon{height:210px} 
-
-
-
 
 .modal{
   display:none; position:fixed; z-index:999; left:0; width:100%;
@@ -212,7 +204,6 @@ button[disabled]{opacity:.65;cursor:not-allowed}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .close{color:var(--accent); float:right; font-size:28px; font-weight:800; cursor:pointer; line-height:1}
 .close:focus-visible{outline:none;border-radius:10px; box-shadow:0 0 0 3px rgba(37,99,235,.2)}
-
 
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:700px){.faq-grid{grid-template-columns:1fr}}
@@ -237,17 +228,13 @@ button[disabled]{opacity:.65;cursor:not-allowed}
   opacity:1; transform:none;
 }
 
-
-
 footer{
   position:fixed;
   bottom:0;
   left:0;
   width:100%;
-  height:var(--footer-h);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  padding:14px 0;
+  text-align:center;
   font-size:.8em;
   color:var(--muted);
   background:var(--bg);
