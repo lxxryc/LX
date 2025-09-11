@@ -379,4 +379,5 @@
       border-radius:50%;
       animation:spin .8s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } } 
+
