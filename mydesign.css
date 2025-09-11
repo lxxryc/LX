@@ -14,7 +14,7 @@
   --focus:0 0 0 3px rgba(37,99,235,.25);
   --gray:#e5e7eb;
   --gray-2:#d1d5db;
- 
+}   
 
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
