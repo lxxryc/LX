@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Le4veMessage</title>
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LX</title>
   <link rel="stylesheet" href="mydesign.css">
   <meta name="description" content="AnonSend" />
   <meta name="color-scheme" content="light" />
+
 </head>
 <body>
-  
+
   <nav id="navbar" role="navigation" aria-label="Top">
     <div class="nav-left">
       <div class="logo" tabindex="0" aria-label="Le4veMessage">Le4veMessage</div>
@@ -41,7 +43,7 @@
 
     <section id="toLouis" aria-labelledby="toLouis-title">
       <h2 id="toLouis-title" class="sr-only">Send a message to Louis</h2>
-            
+
       <template id="faqLouisTpl">
         <h2 style="margin-bottom:10px">FAQ — To: Louis</h2>
         <div class="faq-list">
@@ -79,7 +81,7 @@
 
     <section id="anonymous" aria-labelledby="anonymous-title">
       <h2 id="anonymous-title" class="sr-only">Send Anonymous Message</h2>
-        
+
       <template id="faqAnonTpl">
         <h2 style="margin-bottom:10px">FAQ — Anonymous</h2>
         <div class="faq-list">
@@ -145,8 +147,17 @@
           </div>
         </div>
         <button type="submit">Send Anonymously</button>
+
+         <div class="privacy-box">
+            <div class="privacy-title">🔒 Privacy reminder</div>
+            <p class="privacy-text">
+            Anonymous messages may still be moderated. Don’t include sensitive data you wouldn’t want stored.
+            </p>
+        </div>
+
         <div class="form-result" id="formResultAnon"></div>
       </form>
+
     </section>
   </main>
 
@@ -162,7 +173,7 @@
       <span class="close" data-close="aboutModal">&times;</span>
       <h2 id="aboutTitle">About</h2>
       <p style="margin-top:6px">
-        Le4veMessage is a minimalist self-destructing message site with anonymous sending.
+        Le4veMessage is a minimalist self-destructing message site with anonymous sending.
       </p>
     </div>
   </div>
