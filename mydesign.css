@@ -381,3 +381,28 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } } 
 
+
+/*  UNIVERSAL ANTI-HIGHLIGHT FIX  */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;     
+  outline: none !important;                 
+  box-shadow: none !important;               
+}
+
+/* Prevent any background flash or overlay when tapping */
+*:active,
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+ 
+}
+
+ html, body {
+  -webkit-user-select: none;  /* Prevents accidental text selection */
+  -webkit-touch-callout: none;/* Disables long-press popup on iOS */
+  user-select: none;
+  touch-action: manipulation; /* Makes touch interactions smoother */
+}
+
+
